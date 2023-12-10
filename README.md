@@ -43,22 +43,24 @@ The satellite's orbit is visualized using MATLAB's plotting capabilities. The sc
 
 ### Coordinate Transformations
 
-Coordinate transformations are applied to convert the satellite's position from perifocal coordinates to ECI coordinates. The matrices `Rz_Omega`, `Rx_i`, and `Rz_omega` are used for these transformations.
+Coordinate transformations are applied to convert the satellite's position from perifocal coordinates to ECI coordinates. The matrices \( R_{z_{\Omega}} \), \( R_{x_i} \), and \( R_{z_{\omega}} \) are used for these transformations.
 
 ## Formulas Used
 
 1. **Orbital Elements Calculation:**
-    - Semi-Major Axis: `a = h^2 / (μ * (1 - e^2))`
-    - Eccentric Anomaly: `tan(θ/2) = sqrt((1 - e) / (1 + e)) * tan(E/2)`
+    - Semi-Major Axis: ![Semi-Major Axis Formula](https://latex.codecogs.com/png.latex?\bg_white%20\dpi{250}a=\frac{h^2}{\mu(1-e^2)})
+
+    - Eccentric Anomaly: ![Eccentric Anomaly Formula](https://latex.codecogs.com/png.latex?\bg_white%20\dpi{250}\tan\left(\frac{\theta}{2}\right)%20\sqrt{\frac{1-%20e}{1+e}}\tan\left(\frac{E}{2}\right))
+    
 
 2. **Eccentric Anomaly Iteration:**
-    - Newton's Method: `E = E - (E - e * sin(E) - M) / (1 - e * cos(E))`
+    - Newton's Method: ![Newton's Method Formula](https://latex.codecogs.com/png.latex?\bg_white%20\dpi{250}E=E-\frac{E-e\sin(E)-M}{1-e\cos(E)})
 
 3. **Orbit Positions Calculation:**
-    - Perifocal Coordinates: `p = a * (cos(E) - e)`, `q = a * sqrt(1 - e^2) * sin(E)`
+    - Perifocal Coordinates: ![Perifocal Coordinates Formula](https://latex.codecogs.com/png.latex?\bg_white%20\dpi{250}p=a(\cos(E)-e),\quad(q=a\sqrt{1-e^2}\sin(E)))
 
 4. **Coordinate Transformations:**
-    - `r_ECI = Rz_Omega^(-1) * Rx_i^(-1) * Rz_omega^(-1) * r_pq`
+    - ![Coordinate Transformations Formula](https://latex.codecogs.com/png.latex?\bg_white%20\dpi{250}r_{ECI}=R_{z_{\Omega}}^{-1}\cdot%20R_{x_i}^{-1}\cdot%20R_{z_{\omega}}^{-1}\cdot%20r_{pq})
 
 ## Additional Information
 
@@ -72,4 +74,3 @@ For any questions, feedback, or suggestions regarding this code, please contact:
 
 **Author:** A. Asgharpoor  
 **Email:** A.Asgharpoor@ut.ac.ir
-
