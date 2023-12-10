@@ -22,7 +22,7 @@ This repository contains MATLAB code designed to simulate the orbital motion of 
 2. Clone this repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/Armanasq/OrbitDetermination.git
+   git clone https://github.com/your-username/orbital-mechanics-simulation.git
    ```
 
 ## Usage
@@ -48,17 +48,17 @@ Coordinate transformations are applied to convert the satellite's position from 
 ## Formulas Used
 
 1. **Orbital Elements Calculation:**
-    - Semi-Major Axis: \( a = \frac{h^2}{\mu(1 - e^2)} \)
-    - Eccentric Anomaly: \( \tan\left(\frac{\theta}{2}\right) = \sqrt{\frac{1 - e}{1 + e}} \tan\left(\frac{E}{2}\right) \)
+    - Semi-Major Axis: `a = h^2 / (μ * (1 - e^2))`
+    - Eccentric Anomaly: `tan(θ/2) = sqrt((1 - e) / (1 + e)) * tan(E/2)`
 
 2. **Eccentric Anomaly Iteration:**
-    - Newton's Method: \( E = E - \frac{E - e \sin(E) - M}{1 - e \cos(E)} \)
+    - Newton's Method: `E = E - (E - e * sin(E) - M) / (1 - e * cos(E))`
 
 3. **Orbit Positions Calculation:**
-    - Perifocal Coordinates: \( p = a(\cos(E) - e) \), \( q = a\sqrt{1 - e^2}\sin(E) \)
+    - Perifocal Coordinates: `p = a * (cos(E) - e)`, `q = a * sqrt(1 - e^2) * sin(E)`
 
 4. **Coordinate Transformations:**
-    - \( r_{ECI} = R_{z_{\Omega}}^{-1} \cdot R_{x_i}^{-1} \cdot R_{z_{\omega}}^{-1} \cdot r_{pq} \)
+    - `r_ECI = Rz_Omega^(-1) * Rx_i^(-1) * Rz_omega^(-1) * r_pq`
 
 ## Additional Information
 
@@ -73,4 +73,3 @@ For any questions, feedback, or suggestions regarding this code, please contact:
 **Author:** A. Asgharpoor  
 **Email:** A.Asgharpoor@ut.ac.ir
 
----
